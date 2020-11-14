@@ -29,6 +29,9 @@ const callback = function (mutationsList, observer) {
     })
 };
 
+// This exists to set the `captures` variable above, because
+// the code that generates is injected directly into the page and 
+// can't set it itself
 document.addEventListener('update-captures', e => {
     captures = e.detail;
 })
