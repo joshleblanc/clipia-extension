@@ -3,7 +3,7 @@
     "version": "1.0",
     "description": "Provides uploading to Clipia directly from Stadia captures",
     "background": {
-      "scripts": ["background.js"],
+      "scripts": ["src/background.js"],
       "persistent": false
     },
     "permissions": [
@@ -14,7 +14,7 @@
       "https://video-downloads.googleusercontent.com/"
     ],
     "page_action": {
-      "default_popup": "popup.html"
+      "default_popup": "src/popup.html"
     },
     "manifest_version": 2,
     "content_scripts": [
