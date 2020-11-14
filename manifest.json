@@ -9,7 +9,6 @@
     "permissions": [
       "storage",
       "activeTab",
-      "identity",
       "https://lh3.google.com/",
       "https://lh3.googleusercontent.com/",
       "https://video-downloads.googleusercontent.com/"
