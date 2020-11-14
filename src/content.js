@@ -13,14 +13,11 @@ const callback = function (mutationsList, observer) {
                 return node && node.querySelector && node.querySelector(`[data-capture-id]`)
             })
             if (containerNode) {
-                console.log(captures);
                 const row = containerNode.querySelector('.google-material-icons').parentElement.parentElement.parentElement;
                 const videoNode = containerNode.querySelector(`[data-capture-id]`);
                 const buttons = row.children[1];
                 const placeholder = document.createElement('div');
                 buttons.prepend(placeholder);
-                console.log(videoNode);
-                console.log(videoNode.dataset.captureId);
                 new MediaContainer({
                     target: placeholder,
                     props: captures[videoNode.dataset.captureId]
@@ -82,8 +79,6 @@ const inject = () => {
                     const url = isImage ? datum[7][1] : datum[8][1];
                     captures[id] = { id, game, isImage, url };
                 });
-                console.log(captures);
-                window.captures = captures;
 
                 const event = new CustomEvent("update-captures", { detail: captures });
                 document.dispatchEvent(event);
@@ -93,9 +88,6 @@ const inject = () => {
     }
 };
 
-chrome.storage.sync.get(["clipiaKey"], item => {
-    console.log(item);
-});
 const script = document.createElement('script');
 script.textContent = `(${inject.toString()})()`;
 (document.head || document.documentElement).prepend(script);
