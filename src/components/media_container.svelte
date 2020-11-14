@@ -18,39 +18,34 @@
             x: "center",
             y: "bottom",
         },
-        types: [
-            {
-                type: "error",
-                className: "notification",
-            },
-            {
-                type: "success",
-                className: "notification",
-            },
-        ],
+        dismissible: true
     });
 
     let tip;
     let clipiaKey;
 
     $: {
-        if(clipiaKey) {
+        if (clipiaKey) {
             tip = null;
         } else {
-            tip = "Add your Clipia API key to upload!"
+            tip = "Add your Clipia API key to upload!";
         }
     }
 
-    chrome.storage.sync.get("clipiaKey", item => {
+    chrome.storage.sync.get("clipiaKey", (item) => {
         clipiaKey = item.clipiaKey;
-    })
+    });
 
     const handleClick = async () => {
         loading = true;
         chrome.runtime.sendMessage({ game, id, isImage, url }, function (
             response
         ) {
-            if (response.errors) {
+            if (response.errors === "Not Authorized") {
+                notyf.error(
+                    "You're not allowed to do this. Check your API key"
+                );
+            } else if (response.errors) {
                 notyf.error("You've already uploaded this!");
             } else {
                 const notification = notyf.success(
@@ -101,7 +96,7 @@
 
 {#if id}
     <div class="container">
-        <SvelteTooltip tip={tip}>
+        <SvelteTooltip {tip}>
             <button
                 disabled={!clipiaKey}
                 class:button-container-enabled={clipiaKey}
