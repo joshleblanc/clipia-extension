@@ -1,7 +1,7 @@
 import MediaContainer from './components/media_container.svelte';
+import { when, observable } from 'mobx';
 
-
-let captures = {};
+let captures = observable({});
 
 // Options for the observer (which mutations to observe)
 const config = { attributes: true, childList: true, subtree: true };
@@ -18,14 +18,21 @@ const callback = function (mutationsList, observer) {
                 const buttons = row.children[1];
                 const placeholder = document.createElement('div');
                 buttons.prepend(placeholder);
-                new MediaContainer({
-                    target: placeholder,
-                    props: captures[videoNode.dataset.captureId]
-                });
+                when(() => captures[videoNode.dataset.captureId], () => {
+                    console.log("good to go");
+                    new MediaContainer({
+                        target: placeholder,
+                        props: captures[videoNode.dataset.captureId]
+                    });
+                })
             }
         }
     })
 };
+
+document.addEventListener('update-captures', e => {
+    captures = e.detail;
+})
 
 const observer = new MutationObserver(callback);
 observer.observe(document, config);
