@@ -23,6 +23,11 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
+"@polka/url@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@polka/url/-/url-0.5.0.tgz#b21510597fd601e5d7c95008b76bf0d254ebfd31"
+  integrity sha512-oZLYFEAzUKyi3SKnXvj32ZCEGH6RDnao7COuCVhDydMS9NrCSVXhM79VaKyP5+Zc33m0QXEd2DN3UkU7OsHcfw==
+
 "@polka/url@^1.0.0-next.9":
   version "1.0.0-next.11"
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.11.tgz#aeb16f50649a91af79dbe36574b66d0f9e4d9f71"
@@ -549,7 +554,7 @@ rollup@^2.3.4:
   optionalDependencies:
     fsevents "~2.1.2"
 
-sade@^1.6.0:
+sade@^1.4.0, sade@^1.6.0:
   version "1.7.4"
   resolved "https://registry.yarnpkg.com/sade/-/sade-1.7.4.tgz#ea681e0c65d248d2095c90578c03ca0bb1b54691"
   integrity sha512-y5yauMD93rX840MwUJr7C1ysLFBgMspsdTo4UVrDg3fXDvtwOyIqykhVAAm6fk/3au77773itJStObgK+LKaiA==
@@ -573,6 +578,19 @@ serialize-javascript@^4.0.0:
   dependencies:
     randombytes "^2.1.0"
 
+sirv-cli@^0.4.4:
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/sirv-cli/-/sirv-cli-0.4.6.tgz#c28ab20deb3b34637f5a60863dc350f055abca04"
+  integrity sha512-/Vj85/kBvPL+n9ibgX6FicLE8VjidC1BhlX67PYPBfbBAphzR6i0k0HtU5c2arejfU3uzq8l3SYPCwl1x7z6Ww==
+  dependencies:
+    console-clear "^1.1.0"
+    get-port "^3.2.0"
+    kleur "^3.0.0"
+    local-access "^1.0.1"
+    sade "^1.4.0"
+    sirv "^0.4.6"
+    tinydate "^1.0.0"
+
 sirv-cli@^1.0.0:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/sirv-cli/-/sirv-cli-1.0.8.tgz#150c3f62694203a86cf5d71ec60e6ff4c34064a9"
@@ -586,6 +604,14 @@ sirv-cli@^1.0.0:
     semiver "^1.0.0"
     sirv "^1.0.7"
     tinydate "^1.0.0"
+
+sirv@^0.4.6:
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/sirv/-/sirv-0.4.6.tgz#185e44eb93d24009dd183b7494285c5180b81f22"
+  integrity sha512-rYpOXlNbpHiY4nVXxuDf4mXPvKz1reZGap/LkWp9TvcZ84qD/nPBjjH/6GZsgIjVMbOslnY8YYULAyP8jMn1GQ==
+  dependencies:
+    "@polka/url" "^0.5.0"
+    mime "^2.3.1"
 
 sirv@^1.0.7:
   version "1.0.7"
@@ -642,6 +668,13 @@ svelte-loading-spinners@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/svelte-loading-spinners/-/svelte-loading-spinners-0.1.1.tgz#a35a811b7db0389ec2a5de6904c718c58c36e1f9"
   integrity sha512-or4zs10VOdczOJo3u25IINXQOkZbLNAxMrXK0PRbzVoJtPQq/QZPNxI32383bpe+soYcEKmESbmW+JlW3MbUKQ==
+
+svelte-tooltip@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/svelte-tooltip/-/svelte-tooltip-1.2.0.tgz#a9cf2dfcbcae0c1446afe505e8ccdb04c75fa6e6"
+  integrity sha512-FmaiNoCGkXBqF5AAscv+NdLtVIhywpqcaKw7mP1IksLJPMW3QaOPB8G23CHPQWde0J3A0NdCDQ3DI2isWGsDbg==
+  dependencies:
+    sirv-cli "^0.4.4"
 
 svelte@^3.0.0:
   version "3.29.7"
