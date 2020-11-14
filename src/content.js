@@ -19,7 +19,6 @@ const callback = function (mutationsList, observer) {
                 const placeholder = document.createElement('div');
                 buttons.prepend(placeholder);
                 when(() => captures[videoNode.dataset.captureId], () => {
-                    console.log("good to go");
                     new MediaContainer({
                         target: placeholder,
                         props: captures[videoNode.dataset.captureId]
