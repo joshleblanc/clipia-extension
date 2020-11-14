@@ -30,10 +30,6 @@ const callback = function (mutationsList, observer) {
 const observer = new MutationObserver(callback);
 observer.observe(document, config);
 
-document.addEventListener('update-captures', e => {
-    captures = e.detail;
-})
-
 const inject = () => {
 
     const rpcQueryId = "CmnEcf"; // Took this from https://github.com/refi64/stratos/blob/main/lib/inject/captures_interceptor.dart#L17
