@@ -52,7 +52,6 @@ const inject = () => {
                 return [];
             }
 
-            // + 2 is to make sure the terminating ] is included.
             var response = JSON.parse(data.substring(responseStart, responseEnd + 2));
             if (response[0][1] === rpcQueryId) {
                 return JSON.parse(response[0][2]);
