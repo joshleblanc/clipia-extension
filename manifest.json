@@ -13,7 +13,7 @@
       "https://lh3.googleusercontent.com/",
       "https://video-downloads.googleusercontent.com/"
     ],
-    "page_action": {
+    "browser_action": {
       "default_popup": "src/popup.html"
     },
     "manifest_version": 2,
