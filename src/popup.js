@@ -9,5 +9,5 @@ form.addEventListener("submit", e => {
     })
 })
 chrome.storage.sync.get(["clipiaKey"], item => {
-    clipiaKey.value = item.clipiaKey;
+    clipiaKey.value = item.clipiaKey || "";
 })
