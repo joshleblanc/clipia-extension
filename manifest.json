@@ -1,6 +1,6 @@
 {
     "name": "Clipia",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Provides uploading to Clipia directly from Stadia captures",
     "background": {
       "scripts": ["src/background.js"],
@@ -9,6 +9,7 @@
     "permissions": [
       "storage",
       "activeTab",
+      "https://clipia.ca",
       "https://lh3.google.com/",
       "https://lh3.googleusercontent.com/",
       "https://video-downloads.googleusercontent.com/"
