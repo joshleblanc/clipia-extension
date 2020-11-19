@@ -9,7 +9,8 @@
     "permissions": [
       "storage",
       "activeTab",
-      "https://clipia.ca",
+      "https://clipia.ca/api/v1/media/exists",
+      "https://clipia.ca/api/v1/media/upload",
       "https://lh3.google.com/",
       "https://lh3.googleusercontent.com/",
       "https://video-downloads.googleusercontent.com/"
