@@ -16,7 +16,6 @@ const callback = function (mutationsList, observer) {
                 const icons = containerNode.querySelectorAll('.google-material-icons');
                 const lastIcon = icons[icons.length - 1];
                 const row = lastIcon.parentElement.parentElement.parentElement.parentElement.parentElement;
-                console.log(row);
                 const videoNode = containerNode.querySelector(`[data-capture-id]`);
                 const buttons = row.children[2];
                 const placeholder = document.createElement('div');
