@@ -13,9 +13,12 @@ const callback = function (mutationsList, observer) {
                 return node && node.querySelector && node.querySelector(`[data-capture-id]`)
             })
             if (containerNode) {
-                const row = containerNode.querySelector('.google-material-icons').parentElement.parentElement.parentElement;
+                const icons = containerNode.querySelectorAll('.google-material-icons');
+                const lastIcon = icons[icons.length - 1];
+                const row = lastIcon.parentElement.parentElement.parentElement.parentElement.parentElement;
+                console.log(row);
                 const videoNode = containerNode.querySelector(`[data-capture-id]`);
-                const buttons = row.children[1];
+                const buttons = row.children[2];
                 const placeholder = document.createElement('div');
                 buttons.prepend(placeholder);
                 when(() => captures[videoNode.dataset.captureId], () => {

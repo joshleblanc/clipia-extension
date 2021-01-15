@@ -1,5 +1,5 @@
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  const baseUrl = "https://clipia.ca/api/v1/media"
+  const baseUrl = "https://3000.code.monolith.sh/api/v1/media"
   const uploadUrl = `${baseUrl}/upload`;
   const existsUrl = `${baseUrl}/exists`;
   const formData = new FormData();
