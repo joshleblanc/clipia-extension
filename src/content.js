@@ -1,5 +1,5 @@
 import MediaContainer from './components/media_container.svelte';
-import { when, observable, autorun } from 'mobx';
+import { when, observable } from 'mobx';
 
 let captures = observable.map({});
 
